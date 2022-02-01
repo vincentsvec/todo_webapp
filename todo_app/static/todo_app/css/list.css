@@ -1,0 +1,418 @@
+/* stylesheet for lists view */
+
+input[type="date"] {
+    border: 1px solid #a8e3ff;
+    border-radius: 5px;
+    padding: 5px;
+    height: 30px;
+    margin-left: 20px;
+}
+
+.tasks-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100% - 50px);
+    width: 100%;
+    padding: 60px 50px 0px 50px;
+    overflow-y: auto;
+    background: transparent;
+}
+
+.main-task {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #a8e3ff;
+}
+
+.task-edit {
+    display: none;
+    flex-direction: column;
+    height: 100%;
+}
+
+.task-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+}
+
+.task {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 10px;
+    justify-content: space-between;
+}
+
+.task-name {
+    font-size: 1.5rem;
+}
+
+.task-icons {
+    height: 100%;
+    min-width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.due-date {
+    height: 20px;
+    min-width: 140px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0px;
+    flex-grow: 1;
+    padding-right: 20px;
+    padding-top: 5px;
+    right: 0px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.subnotes {
+    padding-left: 40px;
+}
+
+.checkbox {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    margin: 0;
+    color: rgba(0, 0, 0, 0.5);
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 0.15em solid currentColor;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    margin-right: 15px;
+}
+
+.checkbox:checked:before {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    box-shadow: inset 1em 1em var(--form-control-color);
+    transform-origin: bottom left;
+    clip-path: circle(40%);
+    background-color: rgb(255, 141, 47);
+}
+
+.list-header-container {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0px;
+    background: transparent;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 50px;
+}
+
+.list-title {
+    background: transparent;
+    border: none;
+    font-size: 3rem;
+    height: 100%;
+    padding: 30px 0px 0px 0px;
+    border-bottom: 2px solid #a8e3ff;
+    width: 30%;
+    transition: 0.2s;
+}
+
+.trash-btn {
+    background: transparent;
+    border: none;
+    height: 70px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.trash-btn:hover {
+    color: rgb(255, 141, 47);
+}
+
+.important-btn {
+    background: transparent;
+    border: none;
+    color: rgba(0, 0, 0, 0.5);
+    height: 70px
+}
+
+.important-btn:hover {
+    color: #efbc68;
+}
+
+.edit-btn {
+    background: transparent;
+    border: none;
+    color: rgba(0, 0, 0, 0.5);
+    height: 70px
+}
+
+.edit-btn:hover {
+    color: black;
+}
+
+.subnotes-edit {
+    display: none;
+    background: transparent;
+    border: 1px solid #a8e3ff;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    resize: none;
+}
+
+.subnotes-edit:focus {
+    outline: none;
+}
+
+.active-important {
+    color: #efbc68;
+}
+
+.list-title:focus {
+    outline: none;
+    border-bottom: 3px solid #3bc1ff;
+}
+
+.name-edit {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #3bc1ff;
+    transition: 0.1s;
+    font-size: 24px;
+}
+
+.name-edit:focus {
+    border-bottom: 3px solid #3bc1ff;
+}
+
+.due-edit {
+    margin-top: 10px;
+}
+
+.add-task-form {
+    margin-top: 20px;
+    width: 100%;
+    display: none;
+}
+
+.subnotes-input {
+    width: 100%;
+    resize: none;
+    border: 1px solid #a8e3ff;
+    border-radius: 5px;
+    padding: 10px;
+    height: 120px;
+}
+
+.subnotes-input:focus {
+    outline: none;
+}
+
+.namedate-container {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    padding: 10px 0px;
+}
+
+.form-input-task {
+    border: none;
+    border-bottom: 2px solid #a8e3ff;
+    border-radius: 5px;
+    padding: 5px;
+    transition: 0.2s;
+}
+
+.form-input-task:focus {
+    border-bottom: 3px solid #a8e3ff; 
+}
+
+.add {
+    height: 30px;
+    width: 50px;
+    background-color: #ffc09f;
+    border: none;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+.add-task-btn {
+    margin-top: 50px;
+}
+
+.subnotes-expand {
+    width: 20px;
+    height: 20px;
+    color: rgba(0, 0, 0, 0.5);
+    background: transparent;
+    border: none;
+}
+
+.task-name-date {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.task-edit button {
+    visibility: hidden;
+}
+
+.edit-name-date {
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 1500px) {
+    .due-date {
+        font-size: 12px;
+        padding-right: 15px;
+    }
+
+    .task-name {
+        font-size: 18px;
+    }
+
+    .tasks-container {
+        padding-top: 25px;
+    }
+
+    .task-icons {
+        font-size: 14px;
+        min-width: 90px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .tasks-container {
+        padding: 20px 20px;
+    }
+
+    .task {
+        padding-top: 0px;
+        padding-bottom: 10px;
+    }
+
+    .list-header-container {
+        height: 50px;
+        padding: 0px 20px;
+    }
+
+    .list-title {
+        font-size: 2rem;
+        width: 150px;
+        padding-bottom: 15px;
+    }
+
+    .trash-btn {
+        height: 50px;
+        font-size: 1.6rem;
+        padding-top: 10px;
+    }
+
+    .trash-task {
+        height: 70px;
+        padding-top: 0px;
+        width: 21px;
+        font-size: 1.33333em;
+    }
+
+    .add-task-btn {
+        visibility: visible;
+    }
+
+    .form-input-task {
+        width: 35vw;
+    }
+
+    .main-task {
+        min-height: 50px;
+    }
+
+    .task-container {
+        height: 50px;
+    }
+
+    .subnotes {
+        padding-left: 35px;
+        padding-top: 5px;
+    }
+
+    .checkbox {
+        height: 1.2rem;
+        width: 1.2rem;
+    }
+
+    .task-name-date {
+        flex-direction: column;
+    }
+
+    .task-name {
+        margin-bottom: 0px;
+        padding-top: 10px;
+    }
+
+    .due-date {
+        justify-content: flex-start;
+    }
+
+    .task-edit {
+        position: absolute;
+        top: 15%;
+        left: 15%;
+        height: 50%;
+        width: 70%;
+        background-color: #a8e3ff;
+        box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
+        z-index: 40;
+        border-radius: 5px;
+        padding: 20px;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .task-edit textarea {
+        background-color: #f5f5f5;
+        padding: 10px;
+    }
+
+    .task-edit button {
+        visibility: visible;
+        height: 40px;
+        width: 80px;
+        padding: 5px;
+        border: none;
+        background-color: #f5f5f5;
+        border-radius: 5px;
+    }
+
+    .name-edit {
+        width: 150px;
+        font-size: 1rem;
+    }
+
+    .subnotes-edit {
+        width: 100%;
+    }
+
+    .edit-name-date {
+        height: 30%;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+}

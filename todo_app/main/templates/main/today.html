@@ -1,0 +1,55 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+<h1 class="page-header">Today</h1>
+<div class="tasks-container">
+    {% for task in tasks %}
+    <div class="main-task">
+        <div class="task-container">
+            <form method="post">
+                {% csrf_token %}
+                {% if task.complete %}
+                <input type='hidden' name='uncheck' value="{{task.id}}" onChange="this.form.submit()">
+                <input class="checkbox" type="checkbox" value="{{task.id}}" name="uncheck" onChange="this.form.submit()" checked>
+                {% else %}
+                <input class="checkbox" type="checkbox" value="{{task.id}}" name="check" onChange="this.form.submit()">
+                {% endif %}
+            </form>
+            <form method="post" id="task-edit-{{task.id}}" class="task-edit" autocomplete="off">
+                {% csrf_token %}
+                <div class="edit-name-date">
+                    <input class="name-edit" type="text" name="task-edit" value="{{task.name}}"></input>
+                    <input class="date-edit" type="date" name="task-edit-dt" value="{{task.due_date}}"></input>
+                    <input type="hidden" name="task-id" value="{{task.id}}">
+                </div>
+                <textarea class="subnotes-edit" id="subnotes-edit-{{task.id}}" name="task-edit-sn">{{task.subnote}}</textarea>
+                <button type="submit">Save</button>
+            </form>
+            <form method="post" class="task" id="task-{{task.id}}">
+                <div class="task-name-date">
+                    {% csrf_token %}
+                    <h1 class="task-name" id="{{task.id}}-task">{{task.name}}</h1>
+                    {% if task.due_date != None %}
+                    <p class="due-date">Due to:   {{task.due_date}}</p>
+                    {% endif %}
+                </div>
+                <div class="task-icons">
+                    {% if task.important %}
+                    <button type="submit" name="remove-important" value="{{task.id}}" class="fas fa-star fa-lg important-btn active-important"></button>
+                    {% else %}
+                    <button type="submit" name="add-important" value="{{task.id}}" class="far fa-star fa-lg important-btn"></button>
+                    {% endif %}
+                    <button class="far fa-edit fa-lg edit-btn" type="button" onclick="editTask({{task.id}})" id="edit-btn-{{task.id}}"></button>
+                    <button type="submit" name="delete-task" value="{{task.id}}" class="far fa-trash-alt fa-lg trash-btn trash-task"></button>
+                </div>
+            </form>
+        </div>   
+        {% if task.subnote != "" %}
+        <div class="subnotes" id="subnotes-{{task.id}}">
+            {{task.subnote|linebreaks}}
+        </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
