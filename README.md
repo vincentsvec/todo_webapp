@@ -1,6 +1,7 @@
 # Django Todo Web Application
 
-This is a ToDo web application created with Django Web Framework. 
+This is a ToDo web application created with Django Web Framework. \
+Deployed version on AWS [here](https://ec2-13-37-84-40.eu-west-3.compute.amazonaws.com)
 
 ## Features:
 
@@ -21,5 +22,6 @@ Project created with:
 * PostgreSQL
 * Docker
 * Bootstrap and Sortable.js extensions
+* 3rd party ssl certificate
 
-![Screenshot](./todo_app/main/assets/app_screen.png)# todo_test
+![Screenshot](./todo_app/main/assets/app_screen.png)
