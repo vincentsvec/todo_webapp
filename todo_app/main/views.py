@@ -18,7 +18,7 @@ def index(response):
     2. Builds form for adding new list
     '''
 
-    tasks = Task.objects.all()
+    tasks = response.user.tasks.all()
     date = datetime.today().strftime('%Y-%m-%d')
 
     def today_tasks():
@@ -131,7 +131,7 @@ def quick_tasks(response):
     # gets order of lists passed by javascript into post request after sorting ends
     order_lists(response)
 
-    tasks = Task.objects.all()
+    tasks = response.user.tasks.all()
 
     # adds quick-tasks list if user is new
     if response.user.lists.filter(name="quick-tasks").first() == None:
