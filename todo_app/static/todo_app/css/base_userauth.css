@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #def3fd;
+}
+
+input[type="text"], input[type="password"], input[type="email"]{
+    border: 1px solid #a8e3ff;
+    border-radius: 5px;
+    height: 30px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+a {
+    font-size: 13px;
+    color: #3bc1ff;
+}
+
+button {
+    width: 50px;
+    height: 30px;
+    background-color: #3bc1ff;
+    border: none;
+    border-radius: 3px;
+    color: #f5f5f5 !important;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    top: 40px;
+    position: absolute;
+    font-size: 3rem;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.main-container {
+    width: 400px;
+    height: 500px;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.signup {
+    color: #3bc1ff;
+}
+
+.forgot-btn {
+    color: rgba(0, 0, 0, 0.5);
+}   
+
+.help-block, ul {
+    font-size: 10px;
+    padding-bottom: 10px;
+} 
+
+.page-header, .page-description {
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.page-header {
+    font-size: 24px;
+    top: -50px;
+}
+
+.page-description {
+    top: -50px;
+}
+
+.login-link {
+    position: relative;
+    bottom: -50px;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 13px;
+}
+
+.control-group {
+    width: 100%;
+}
